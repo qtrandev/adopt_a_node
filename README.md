@@ -1,3 +1,9 @@
+# Adopt-A-Node Project
+
+* Project started by Code For Charlotte
+* Additional support from Code For Fort Lauderdale
+* Uses the MEAN Stack as a template
+
 # [![MEAN Logo](http://mean.io/system/assets/img/logos/meanlogo.png)](http://mean.io/) MEAN Stack
 
 [![Build Status](https://travis-ci.org/linnovate/mean.svg?branch=master)](https://travis-ci.org/linnovate/mean)
