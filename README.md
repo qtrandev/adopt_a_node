@@ -3,6 +3,7 @@
 * Project started by Code For Charlotte
 * Additional support from Code For Fort Lauderdale
 * Uses the MEAN Stack as a template
+* See the [wiki](../../wiki) for how to set up your development environement
 
 # [![MEAN Logo](http://mean.io/system/assets/img/logos/meanlogo.png)](http://mean.io/) MEAN Stack
 
