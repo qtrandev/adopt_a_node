@@ -1,0 +1,16 @@
+<section data-ng-controller="ReportsController" data-ng-init="findOne()">
+  <span>{{report.created | date:'medium'}}</span> /
+  <span>{{report.user.name}}</span>
+  <h2>{{report.event_name}}</h2>
+  <div data-ng-if="hasAuthorization(report)">
+    <a class="btn" href="/#!/reports/{{report._id}}/edit">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn" data-ng-click="remove(report);">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <div>{{report.event_date | date:'medium'}}</div>
+  <div>{{report.group_name}}</div>
+  <div>{{report.group_leader}}</div>
+</section>
