@@ -1,24 +1,130 @@
 <section data-ng-controller="ReportsController" data-ng-init="findOne()">
   <form name="reportForm" class="form-horizontal col-md-6" role="form" data-ng-submit="update(reportForm.$valid)" novalidate>
-    <div class="form-group" ng-class="{ 'has-error' : submitted && reportForm.title.$invalid }">
-      <label mean-token="'edit-title'" for="title" class="col-md-2 control-label">Title</label>
-      <div class="col-md-10">
-        <input name="title" type="text" class="form-control" data-ng-model="report.title" id="title" placeholder="Title" required>
-        <div ng-show="submitted && reportForm.title.$invalid" class="help-block">
-          <p ng-show="reportForm.title.$error.required">Title is required</p>
-        </div>
-      </div>
 
-    </div>
-    <div class="form-group" ng-class="{ 'has-error' : submitted && reportForm.content.$invalid }">
-      <label mean-token="'edit-content'" for="content" class="col-md-2 control-label">Content</label>
+    <div class="form-group" ng-class="{ 'has-error' : submitted && reportForm.event_name.$invalid }">
+      <label mean-token="'edit-event_name'" for="event_name" class="col-md-2 control-label">Name of City Street(s)</label>
       <div class="col-md-10">
-        <textarea name="content" data-ng-model="report.content" id="content" cols="30" rows="10" placeholder="Content" class="form-control" required></textarea>
-        <div ng-show="submitted && reportForm.content.$invalid" class="help-block">
-          <p ng-show="reportForm.content.$error.required">Content is required</p>
+        <input name="event_name" type="text" class="form-control" data-ng-model="report.event_name" id="event_name" placeholder="Name of City Street(s)" required>
+        <div ng-show="submitted && reportForm.event_name.$invalid" class="help-block">
+          <p ng-show="reportForm.event_name.$error.required">Name of City Street(s) is required</p>
         </div>
       </div>
     </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && reportForm.event_date.$invalid }">
+      <label mean-token="'edit-event_date'" for="event_date" class="col-md-2 control-label">Date of Cleanup</label>
+      <div class="col-md-10">
+        <input name="event_date" type="text" class="form-control" data-ng-model="report.event_date" id="event_date" placeholder="Date of Cleanup" required>
+        <div ng-show="submitted && reportForm.event_date.$invalid" class="help-block">
+          <p ng-show="reportForm.event_date.$error.required">Date of Cleanup is required</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && reportForm.participants.$invalid }">
+      <label mean-token="'edit-participants'" for="participants" class="col-md-2 control-label">Number of Participants</label>
+      <div class="col-md-10">
+        <input name="participants" type="text" class="form-control" data-ng-model="report.participants" id="participants" placeholder="Number of Participants" required>
+        <div ng-show="submitted && reportForm.participants.$invalid" class="help-block">
+          <p ng-show="reportForm.participants.$error.required">Number of Participants is required</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && reportForm.hours_per_participant.$invalid }">
+      <label mean-token="'edit-hours_per_participant'" for="hours_per_participant" class="col-md-2 control-label">Work Hours Per Person</label>
+      <div class="col-md-10">
+        <input name="hours_per_participant" type="text" class="form-control" data-ng-model="report.hours_per_participant" id="hours_per_participant" placeholder="Work Hours Per Person" required>
+        <div ng-show="submitted && reportForm.hours_per_participant.$invalid" class="help-block">
+          <p ng-show="reportForm.hours_per_participant.$error.required">Work Hours Per Person is required</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && reportForm.trash_bags_collected.$invalid }">
+      <label mean-token="'edit-trash_bags_collected'" for="trash_bags_collected" class="col-md-2 control-label">Number of Trash Bags</label>
+      <div class="col-md-10">
+        <input name="trash_bags_collected" type="text" class="form-control" data-ng-model="report.trash_bags_collected" id="trash_bags_collected" placeholder="Number of Trash Bags" required>
+        <div ng-show="submitted && reportForm.trash_bags_collected.$invalid" class="help-block">
+          <p ng-show="reportForm.trash_bags_collected.$error.required">Number of Trash Bags is required</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && reportForm.sign_waiver.$invalid }">
+      <label mean-token="'edit-sign_waiver'" for="sign_waiver" class="col-md-2 control-label">Did each volunteer sign the Participant Waiver?</label>
+      <div class="col-md-10">
+        <input name="sign_waiver" type="text" class="form-control" data-ng-model="report.sign_waiver" id="sign_waiver" placeholder="Yes" required>
+        <div ng-show="submitted && reportForm.sign_waiver.$invalid" class="help-block">
+          <p ng-show="reportForm.sign_waiver.$error.required">Participant Waiver response is required</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && reportForm.review_safety_sheet.$invalid }">
+      <label mean-token="'edit-review_safety_sheet'" for="review_safety_sheet" class="col-md-2 control-label">Did you review the safety sheet?</label>
+      <div class="col-md-10">
+        <input name="review_safety_sheet" type="text" class="form-control" data-ng-model="report.review_safety_sheet" id="review_safety_sheet" placeholder="Yes" required>
+        <div ng-show="submitted && reportForm.review_safety_sheet.$invalid" class="help-block">
+          <p ng-show="reportForm.review_safety_sheet.$error.required">Review Safety Sheet response is required</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && reportForm.call_311.$invalid }">
+      <label mean-token="'edit-call_311'" for="call_311" class="col-md-2 control-label">Did you call 311 to pickup the bags of trash from the cleanup?</label>
+      <div class="col-md-10">
+        <input name="call_311" type="text" class="form-control" data-ng-model="report.call_311" id="call_311" placeholder="Yes" required>
+        <div ng-show="submitted && reportForm.call_311.$invalid" class="help-block">
+          <p ng-show="reportForm.call_311.$error.required">Call 311 response is required</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && reportForm.problems_unusual_items.$invalid }">
+      <label mean-token="'edit-problems_unusual_items'" for="problems_unusual_items" class="col-md-2 control-label">Did you experience any problems or locate unusual items?</label>
+      <div class="col-md-10">
+        <input name="problems_unusual_items" type="text" class="form-control" data-ng-model="report.problems_unusual_items" id="problems_unusual_items" placeholder="No" required>
+        <div ng-show="submitted && reportForm.problems_unusual_items.$invalid" class="help-block">
+          <p ng-show="reportForm.problems_unusual_items.$error.required">Experience Any Problems response is required</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && reportForm.problems_items_explain.$invalid }">
+      <label mean-token="'edit-problems_items_explain'" for="problems_items_explain" class="col-md-2 control-label">If so, please explain:</label>
+      <div class="col-md-10">
+        <textarea name="problems_items_explain" data-ng-model="report.problems_items_explain" id="problems_items_explain" cols="30" rows="10" placeholder="None" class="form-control"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && reportForm.comments.$invalid }">
+      <label mean-token="'edit-comments'" for="comments" class="col-md-2 control-label">Did you participate in any optional activities or have any comments:</label>
+      <div class="col-md-10">
+        <textarea name="comments" data-ng-model="report.comments" id="comments" cols="30" rows="10" placeholder="No" class="form-control"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && reportForm.group_name.$invalid }">
+      <label mean-token="'edit-group_name'" for="group_name" class="col-md-2 control-label">Group Name</label>
+      <div class="col-md-10">
+        <input name="group_name" type="text" class="form-control" data-ng-model="report.group_name" id="group_name" placeholder="Group Name" required>
+        <div ng-show="submitted && reportForm.group_name.$invalid" class="help-block">
+          <p ng-show="reportForm.group_name.$error.required">Group Name is required</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && reportForm.group_leader.$invalid }">
+      <label mean-token="'edit-group_leader'" for="group_leader" class="col-md-2 control-label">Name of Volunteer</label>
+      <div class="col-md-10">
+        <input name="group_leader" type="text" class="form-control" data-ng-model="report.group_leader" id="group_leader" placeholder="Name of Volunteer" required>
+        <div ng-show="submitted && reportForm.group_leader.$invalid" class="help-block">
+          <p ng-show="reportForm.group_leader.$error.required">Name of Volunteer is required</p>
+        </div>
+      </div>
+    </div>
+
     <div class="form-group">
       <div class="col-md-offset-2 col-md-10">
         <button mean-token="'edit-submit'" type="submit" class="btn btn-default">Submit</button>
