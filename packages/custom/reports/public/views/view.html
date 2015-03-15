@@ -1,16 +1,74 @@
 <section data-ng-controller="ReportsController" data-ng-init="findOne()">
-  <span>{{report.created | date:'medium'}}</span> /
-  <span>{{report.user.name}}</span>
-  <h2>{{report.event_name}}</h2>
-  <div data-ng-if="hasAuthorization(report)">
-    <a class="btn" href="/#!/reports/{{report._id}}/edit">
-      <i class="glyphicon glyphicon-edit"></i>
-    </a>
-    <a class="btn" data-ng-click="remove(report);">
-      <i class="glyphicon glyphicon-trash"></i>
-    </a>
-  </div>
-  <div>{{report.event_date | date:'medium'}}</div>
-  <div>{{report.group_name}}</div>
-  <div>{{report.group_leader}}</div>
+  <span>Report: {{report.created | date:'medium'}}</span> /
+  <span>User: {{report.user.name}}</span>
+  <table style="width:100%">
+    <tr>
+      <td>Name of City Street(s)</td>
+      <td>{{report.event_name}}</td>
+    </tr>
+    <tr>
+      <td>Date of Cleanup</td>
+      <td>{{report.event_date | date:'medium'}}</td>
+    </tr>
+    <tr>
+      <td>Number of Participants</td>
+      <td>{{report.participants}}</td>
+    </tr>
+    <tr>
+      <td>Work Hours Per Person</td>
+      <td>{{report.hours_per_participant}}</td>
+    </tr>
+    <tr>
+      <td>Number of Trash Bags</td>
+      <td>{{report.trash_bags_collected}}</td>
+    </tr>
+    <tr>
+      <td>Did each volunteer sign the Participant Waiver?</td>
+      <td>{{report.sign_waiver}}</td>
+    </tr>
+    <tr>
+      <td>Did you review the safety sheet?</td>
+      <td>{{report.review_safety_sheet}}</td>
+    </tr>
+    <tr>
+      <td>Did you call 311 to pickup the bags of trash from the cleanup?</td>
+      <td>{{report.call_311}}</td>
+    </tr>
+    <tr>
+      <td>Did you experience any problems or locate unusual items?</td>
+      <td>{{report.problems_unusual_items}}</td>
+    </tr>
+    <tr>
+      <td>If so, please explain:</td>
+      <td>{{report.problems_items_explain}}</td>
+    </tr>
+    <tr>
+      <td>Did you participate in any optional activities or have any comments:</td>
+      <td>{{report.comments}}</td>
+    </tr>
+    <tr>
+      <td>Group Name</td>
+      <td>{{report.group_name}}</td>
+    </tr>
+    <tr>
+      <td>Name of Volunteer</td>
+      <td>{{report.group_leader}}</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <h2>
+          <a data-ng-href="#!/reports/{{report._id}}">{{report.title}}</a>
+          <span data-ng-if="hasAuthorization(report)">
+            <a class="btn" aria-label="Edit Report" href="/#!/reports/{{report._id}}/edit">
+              <span class="glyphicon glyphicon-star" aria-hidden="true">Edit</span>
+            </a>
+            <a class="btn" aria-label="Delete Report" data-ng-click="remove(report);">
+              <span class="glyphicon glyphicon-trash" aria-hidden="true">Delete</span>
+            </a>
+          </span>
+        </h2>
+      </td>
+    </tr>
+
+  </table>
 </section>
