@@ -1,8 +1,8 @@
 # Adopt-A-Node Project
 
-* Project started by Code For Charlotte
-* Additional support from Code For Fort Lauderdale
-* Uses the MEAN Stack as a template
+* Project started by [Code For Charlotte](https://github.com/CodeForCharlotte)
+* Additional support from [Code For Fort Lauderdale](https://github.com/CodeForFtL)
+* Uses the [MEAN Stack](https://github.com/linnovate/mean) as a template
 * See the <strong>[wiki](../../wiki)</strong> for how to set up your development environment
 
 # [![MEAN Logo](http://mean.io/system/assets/img/logos/meanlogo.png)](http://mean.io/) MEAN Stack
