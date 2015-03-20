@@ -32,10 +32,10 @@
         <td>{{adoption.status}}</td>
         <td data-ng-if="hasAuthorization(adoption)">
             <a class="btn" href="/#!/adoptions/{{adoption._id}}/edit">
-              <i class="glyphicon glyphicon-edit"></i>
+              <i class="glyphicon glyphicon-edit">Edit</i>
             </a>
             <a class="btn" data-ng-click="remove(adoption);">
-              <i class="glyphicon glyphicon-trash"></i>
+              <i class="glyphicon glyphicon-trash">Delete</i>
             </a>
         </td>
       </tr>
