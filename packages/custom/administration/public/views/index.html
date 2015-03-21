@@ -1,21 +1,36 @@
-<div class="" data-ng-controller="AdministrationController">
+<div class="admin" data-ng-controller="AdministrationController">
   <p class="alert alert-info">The Administration section will only be available to users with the admin role.</p>
   <h1>Administration</h1>
-  <h2>Package: {{package.name}}</h2>
-  <ol>
+  <!--<h2>Package: {{package.name}}</h2>-->
+  <ul>
     <li>
-      <a href="administration/example/anyone">Server route that anyone can access</a>
+      <a href="administration/adoptions"><button class="btn btn-default">View all adoptions</button></a>
     </li>
     <li>
-      <a href="administration/example/auth">Server route that requires authentication</a>
+      <a href="administration/reports"><button class="btn btn-default">View all reports</button></a>
     </li>
     <li>
-      <a href="administration/example/admin">Server route that requires admin user</a>
+      <a href="administration/users"><button class="btn btn-default">View all users</button></a>
+    </li>
+    <li>
+      <a href="administration/email"><button class="btn btn-default">Email users</button></a>
+    </li>
+    <li>
+      <a href="administration/reportsdue"><button class="btn btn-default">Reports due</button></a>
+    </li>
+    <li>
+      <a href="administration/adoptionsexpire"><button class="btn btn-default">Expiring adoptions</button></a>
+    </li>
+    <li>
+      <a href="administration/streets"><button class="btn btn-default">All streets</button></a>
+    </li>
+    <li>
+      <a href="administration/backup"><button class="btn btn-default">Backup</button></a>
     </li>
     <li>
       <a href="administration/example/render">Raw Html rendering example from using swig</a>
     </li>
-  </ol>
+  </ul>
   <h3><img src="/administration/assets/img/logo.png" /></h3>
   </br>
 </div>
