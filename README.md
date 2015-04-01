@@ -1,3 +1,10 @@
+# Adopt-A-Node Project
+
+* Project started by [Code For Charlotte](https://github.com/CodeForCharlotte)
+* Additional support from [Code For Fort Lauderdale](https://github.com/CodeForFtL)
+* Uses the [MEAN Stack](https://github.com/linnovate/mean) as a template
+* See the <strong>[wiki](../../wiki)</strong> for how to set up your development environment
+
 How to clone a repo (download stuff)
 
 Terminal:
